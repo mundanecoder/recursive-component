@@ -1,4 +1,4 @@
-import { IFolder } from "../pages/File";
+import { IFolder } from "../pages/File/page";
 
 export const dummyFileSystem: IFolder[] = [
   {
