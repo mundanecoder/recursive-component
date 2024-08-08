@@ -68,7 +68,7 @@ const Index = () => {
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full pl-8 py-8">
       <div className="bg-gray-100 py-2 w-2/12 my-4 flex items-center justify-center gap-2 shadow-md">
         <FolderPlus size={18} onClick={createFolder} />
         <FilePlus2 size={18} />
