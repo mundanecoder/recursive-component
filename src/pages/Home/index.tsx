@@ -10,6 +10,13 @@ const App: React.FC = () => {
       >
         recursive file system
       </Link>
+
+      <Link
+        to="/fin"
+        className="py-4 px-2 bg-gray-300 shadow-md justify-center flex w-1/12 rounded"
+      >
+        Income statement
+      </Link>
       {/* <ApiDocumentation /> */}
 
       {/* <SubmitForm /> */}
