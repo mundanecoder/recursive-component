@@ -19,38 +19,6 @@ export const calculateFinancials = (formData: FormData): FormData => {
   return updatedFormData;
 };
 
-// export const calculatePercentages = (
-//   formData: FormData
-// ): {
-//   year1: PercentageData;
-//   year2: PercentageData;
-//   year3: PercentageData;
-// } => {
-//   const percentageData: {
-//     year1: PercentageData;
-//     year2: PercentageData;
-//     year3: PercentageData;
-//   } = {
-//     year1: {} as PercentageData,
-//     year2: {} as PercentageData,
-//     year3: {} as PercentageData,
-//   };
-
-//   ["year1", "year2", "year3"].forEach((year) => {
-//     const yearData = formData[year as keyof FormData];
-//     const yearPercentages = percentageData[year as keyof typeof percentageData];
-
-//     Object.keys(yearData).forEach((field) => {
-//       if (field !== "revenues") {
-//         yearPercentages[`${field}Percentage` as keyof PercentageData] =
-//           (yearData[field as keyof YearData] / yearData.revenues) * 100;
-//       }
-//     });
-//   });
-
-//   return percentageData;
-// };
-
 export const calculatePercentages = (
   formData: FormData
 ): {
