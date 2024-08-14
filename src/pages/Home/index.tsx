@@ -17,6 +17,13 @@ const App: React.FC = () => {
       >
         Income statement
       </Link>
+
+      <Link
+        to="/ssr"
+        className="py-4 px-2 bg-gray-300 shadow-md justify-center flex w-1/12 rounded"
+      >
+        ssr in csr
+      </Link>
       {/* <ApiDocumentation /> */}
 
       {/* <SubmitForm /> */}
