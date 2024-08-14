@@ -6,7 +6,7 @@ import FinanceModel from "../pages/finance-model";
 import SSRComponent from "../pages/SSRinReact";
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/ssr",
     element: <Home />,
   },
   // {
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     path: "fin",
     element: <FinanceModel />,
   },
-  { path: "/ssr", element: <SSRComponent /> },
+  { path: "/", element: <SSRComponent /> },
 ]);
 
 export default router;
