@@ -1,7 +1,5 @@
-// Import React and React Helmet
-import { Helmet } from "react-helmet";
+import React, { useEffect } from "react";
 
-// Define your component
 const MyComponent = ({
   title,
   description,
@@ -11,17 +9,45 @@ const MyComponent = ({
   description: string;
   image: string;
 }) => {
+  useEffect(() => {
+    document.title = title;
+
+    const metaTitle = document.querySelector('meta[property="og:title"]');
+    const metaDescription = document.querySelector(
+      'meta[property="og:description"]'
+    );
+    const metaImage = document.querySelector('meta[property="og:image"]');
+
+    if (metaTitle) {
+      metaTitle.setAttribute("content", title);
+    } else {
+      const newMetaTitle = document.createElement("meta");
+      newMetaTitle.setAttribute("property", "og:title");
+      newMetaTitle.setAttribute("content", title);
+      document.head.appendChild(newMetaTitle);
+    }
+
+    if (metaDescription) {
+      metaDescription.setAttribute("content", description);
+    } else {
+      const newMetaDescription = document.createElement("meta");
+      newMetaDescription.setAttribute("property", "og:description");
+      newMetaDescription.setAttribute("content", description);
+      document.head.appendChild(newMetaDescription);
+    }
+
+    if (metaImage) {
+      metaImage.setAttribute("content", image);
+    } else {
+      const newMetaImage = document.createElement("meta");
+      newMetaImage.setAttribute("property", "og:image");
+      newMetaImage.setAttribute("content", image);
+      document.head.appendChild(newMetaImage);
+    }
+  }, [title, description, image]);
+
   return (
     <div>
-      {/* React Helmet for managing meta tags */}
-      <Helmet>
-        <title>{title}</title>
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={image} />
-      </Helmet>
-
-      {/* Your page content */}
       <h1>{title}</h1>
       <p>{description}</p>
       <img src={image} alt={title} />
@@ -29,7 +55,6 @@ const MyComponent = ({
   );
 };
 
-// Example usage of MyComponent
 const SSRComponent = () => (
   <MyComponent
     title="Dynamic Page Title"
