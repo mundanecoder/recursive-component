@@ -57,7 +57,7 @@ const MyComponent = ({
 
 const SSRComponent = () => (
   <MyComponent
-    title="Dynamic Page Title"
+    title="Page Title from metadata"
     description="This is a description for the dynamic page."
     image="https://as1.ftcdn.net/v2/jpg/02/75/28/44/1000_F_275284479_U4cKD05wWRsEnL2rWRLvxZ0MxRgUbihv.jpg"
   />
