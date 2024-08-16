@@ -24,7 +24,6 @@ const router = createBrowserRouter([
     path: "fin",
     element: <FinanceModel />,
   },
-  // { path: "/", element: <SSRComponent /> },
 ]);
 
 export default router;
